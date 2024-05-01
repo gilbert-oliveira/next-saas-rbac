@@ -8,6 +8,7 @@ import { z } from 'zod'
 
 import { User } from './models/user'
 import { permissions } from './permissions'
+import { billingSubject } from './subjects/billing'
 import { inviteSubject } from './subjects/invite'
 import { organizationSubject } from './subjects/organization'
 import { projectSubject } from './subjects/project'
@@ -18,6 +19,7 @@ const appAbilitiesSchema = z.union([
   userSubject,
   organizationSubject,
   inviteSubject,
+  billingSubject,
   z.tuple([z.literal('manage'), z.literal('all')]),
 ])
 
